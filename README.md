@@ -1,4 +1,4 @@
-# Extração de características de imagens utilizando GLCM ()
+# Extração de características de imagens utilizando GLCM
 <!-- TABLE OF CONTENTS -->
 
 ## Tabela de Conteúdo
