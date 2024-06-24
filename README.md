@@ -1,6 +1,9 @@
 # Extração de características de imagens utilizando GLCM
 <!-- TABLE OF CONTENTS -->
 
+## Equipe
+    Gustavo José da Silveira Mello
+
 ## Tabela de Conteúdo
 
 - [Tabela de Conteúdo](#tabela-de-conteúdo)
@@ -18,6 +21,24 @@
 ## Sobre o Projeto
 
 Este repositório organiza os códigos necessários para utilização do extrator GLCM de características, no qual estão sendo extraídas características dos dados de um dataset e dividindo-as em treino e teste, de modo a resultar em uma acurácia e matriz de confusão através da alimentação das características extraídas no modelo de aprendizado de máquina SVM.
+
+### Descrição do descritor implementado
+
+#### Matriz de Coocorrência de Níveis de Cinza (GLCM - Gray-Level Co-occurrence Matrix):
+A GLCM é um descritor de textura que analisa a distribuição espacial dos níveis de cinza em uma imagem, extraindo características baseadas na frequência de ocorrência de pares de pixels com valores de intensidade específicos a uma distância fixa e orientação definida.
+
+As principais características extraídas pela GLCM incluem:
+- **Contraste**:
+Mede a intensidade do contraste entre um pixel e seu pixel vizinho em toda a imagem. É útil para identificar regiões com variações de intensidade significativas.
+
+- **Correlação**:
+Mede a correlação linear entre os níveis de cinza de pixels pareados. Essa característica ajuda a identificar a linearidade e a similaridade nas variações de textura, diferenciando regiões com padrões estruturados das regiões mais homogêneas.
+
+- **Energia** (Uniformidade ou Angular Second Moment):
+Mede a uniformidade ou regularidade dos valores de intensidade, indicando o quão uniforme a textura é.
+
+- **Homogeneidade** (Inverse Difference Moment):
+Avalia a proximidade da distribuição dos elementos da GLCM da diagonal da matriz. Uma alta homogeneidade indica que os pixels próximos têm valores de intensidade semelhantes, comum em regiões mais suaves e homogêneas da imagem.
 
 ### Feito Com
 
@@ -110,6 +131,24 @@ Certifique-se de que o diretório do conjunto de dados esteja organizado correta
 #### Observações
 - O nome do diretório do conjunto de dados deve ser utilizado como parâmetro durante a execução do arquivo main.py, junto com qualquer outro caminho de diretório necessário.
 - É possível alterar qual modelo de aprendizado de máquina é utilizado através de uma breve modificação na variável **model** da classe do extrator.
+
+
+### Classificador e acurácia
+Utilizou-se como classificador o modelo de aprendizado de máquina SVM (Support Vector Machine).
+
+Além disso, para reprodutibilidade dos resultados, deve-se ressaltar os seguintes valores de variáveis:
+
+- **train_test_split**: essa função utilizou as seguintes variáveis:
+  - test_size=0.2
+  - random_state=1
+- **distances**: essa variável do GLCM demonstrou valor:
+  - distances = [1]
+- **angles**: essa variável do GLCM demonstrou valores:
+  - angles = [0, np.pi/4, np.pi/2, 3*np.pi/4]
+- **glcm**: a chamada do extrator glcm foi feita com os seguintes parâmetros: 
+  - glcm = graycomatrix(image, distances=distances, angles=angles, levels=256, symmetric=True, normed=True)
+
+Com isso, obteve-se: **Acurácia: 80.36%**
 
 
 ### Edição
