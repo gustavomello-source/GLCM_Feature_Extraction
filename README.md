@@ -93,7 +93,7 @@ Serão explicados os arquivos e diretórios na seção de [Edição](#edição).
 https://github.com/gustavomello-source/GLCM_Feature_Extraction
 ```
 
-2. Após o download do projeto, acesse a pasta System do sistema.
+2. Após o download do projeto, acesse a pasta raiz do projeto.
 
 ```
 $ cd GLCM_Feature_Extraction
