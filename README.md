@@ -116,7 +116,8 @@ Certifique-se de que o diretório do conjunto de dados esteja organizado correta
 
 Esta seção descreve brevemente cada diretório e arquivo criado.
 
-- **.git**: Arquivo escondido criado pelo github.
+- **.git**: Diretório escondido criado pelo github.
+- **__pycache__**: Diretório criado na execução do código.
 - **Dataset**: Pasta vazia de exemplo na qual as classes serão colocadas
 - **.gitattributes**: Arquivo escondido criado pelo github.
 - **GLCM.py**: Este é o arquivo que contém o código responsável pela instanciação da classe do extrator de características e todos os processos implementados no pipeline de execução.

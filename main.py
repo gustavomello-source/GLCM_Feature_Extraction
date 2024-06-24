@@ -21,18 +21,11 @@ def main()->NoReturn:
         print(f"Erro: O diretório '{args.dataset}' está vazio")
         exit(1)
     
-    start_time = time.time()
-    
     extrator = GLCMFeatureExtraction(args.dataset)
 
     extrator.train()
     
     extrator.test()
-    
-    end_time = time.time()
-
-    elapsed_time = end_time - start_time
-    print(f"\nProcessos executado em: {elapsed_time} segundos")
     
 if __name__ == "__main__":
     main()

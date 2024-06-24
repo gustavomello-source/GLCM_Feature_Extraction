@@ -33,7 +33,7 @@ class GLCMFeatureExtraction:
         self.train_images, self.test_images, self.train_labels, self.test_labels = self.prepare_data(self, dataset_path)
         
     @staticmethod
-    def extract_features(images)->np.array:
+    def extract_features(images:np.array)->np.array:
         '''
         Esse método extrai as características GLCM das imagens,
         como contraste, dissimilaridade, homogeneidade, energia e correlação.
@@ -111,6 +111,9 @@ class GLCMFeatureExtraction:
         Esse método cria os diretórios necessários para armazenar os arquivos gerados.
         
         Args:
+            None
+            
+        Returns:
             None
         '''
         self.train_feature_path = './features_labels/glcm/train/'
@@ -212,19 +215,18 @@ class GLCMFeatureExtraction:
             
         Returns:
             None
-        
         '''
         predicted_labels = self.model.predict(self.test_features)
 
         accuracy = accuracy_score(self.test_labels, predicted_labels)
-        print(f'Acurácia: {accuracy * 100:.2f}%')
+        print(f'\nAcurácia: {accuracy * 100:.2f}%')
         
         cm = confusion_matrix(self.test_labels, predicted_labels)
 
         plt.figure(figsize=(10, 7))
         sns.heatmap(cm, annot=True, fmt='g', cmap='Blues')
-        plt.xlabel('Predicted labels')
-        plt.ylabel('True labels')
-        plt.title('Confusion Matrix')
+        plt.xlabel('Rótulos Preditos')
+        plt.ylabel('Rótulos Verdadeiros')
+        plt.title('Matriz de Confusão')
         plt.savefig('confusion_matrix.png')
         plt.show()
