@@ -75,7 +75,7 @@ https://github.com/gustavomello-source/GLCM_Feature_Extraction
 2. Após o download do projeto, acesse a pasta System do sistema.
 
 ```
-$ cd System
+$ cd GLCM_Feature_Extraction
 ```
 
 3. Crie e ative a sua virtualenv utilizando os comandos:
